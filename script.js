@@ -41,7 +41,7 @@ function game(rounds, playerSelection){
 }
 
 function displayResultsGame(outcome){
-    // Prints the results of outcome returned by game function
+    /**Prints the results of outcome returned by game function */ 
     console.log(`You won ${outcome.wins} times, you lost ${outcome.loses} times!, ${outcome.draws} games ended as a draw`);
 }
 function displayResultsRound(outcome){
@@ -49,6 +49,3 @@ function displayResultsRound(outcome){
     console.log(outcome);
 }
 
-
-displayResultsGame(game(100, 'rock'));
-displayResultsRound(playRound('Paper'));
