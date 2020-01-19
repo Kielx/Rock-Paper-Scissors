@@ -9,15 +9,15 @@ function playRound(playerSelection){
     playerSelection = playerSelection.toLowerCase();
     computer = computerPlay().toLowerCase();
     if (playerSelection === computer){
-        return 'Draw!';
+        return 0;
     }
     else if (playerSelection === 'rock' && computer === 'scissors')
-        return 'You win!';
+        return 1;
     else if (playerSelection === 'paper' && computer === 'rock')
-        return 'You win!';
+        return 1;
     else if (playerSelection === 'scissors' && computer === 'paper')
-        return 'You win!';
-    else return 'You lose!';
+        return 1;
+    else return -1;
     }
 
 function game(rounds, playerSelection){
@@ -27,10 +27,10 @@ function game(rounds, playerSelection){
     let draws = 0;
     for (i=0; i<rounds; i++){
         outcome = playRound(playerSelection, computerPlay());
-        if (outcome === 'Draw!'){
+        if (outcome === 0){
             draws+=1;
         }
-        else if (outcome === 'You win!') {
+        else if (outcome === 1) {
             wins +=1;
         }
         else {
@@ -49,3 +49,6 @@ function displayResultsRound(outcome){
     console.log(outcome);
 }
 
+var rockButton = document.getElementById("rock");
+
+rockButton.addEventListener("click", function(){console.log(playRound(rockButton.textContent));});
