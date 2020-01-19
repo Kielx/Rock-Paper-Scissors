@@ -40,15 +40,14 @@ function game(rounds, playerSelection){
     return {'wins' : wins, 'loses' : loses, 'draws' :draws};
 }
 
-function displayResultsGame(outcome){
-    /**Prints the results of outcome returned by game function */ 
-    console.log(`You won ${outcome.wins} times, you lost ${outcome.loses} times!, ${outcome.draws} games ended as a draw`);
-}
-function displayResultsRound(outcome){
-    // Prints the results of outcome returned by playRound function
-    console.log(outcome);
-}
 
-var rockButton = document.getElementById("rock");
+outcomes = [];
+let gamebuttons = document.querySelectorAll(".game");
 
-rockButton.addEventListener("click", function(){console.log(playRound(rockButton.textContent));});
+gamebuttons.forEach(button => { 
+    button.addEventListener('click', () =>{
+        outcomes.push(playRound(button.textContent));
+        console.log(outcomes);
+    });
+});
+
