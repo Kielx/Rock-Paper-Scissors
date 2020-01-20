@@ -7,47 +7,53 @@ function computerPlay() {
 function playRound(playerSelection){
     //Plays a single round of rock paper scissors with provided playerSelections hand
     playerSelection = playerSelection.toLowerCase();
-    computer = computerPlay().toLowerCase();
+    let computer = computerPlay().toLowerCase();
+    let roundOutcome = {
+        playerSelection: playerSelection,
+        computerSelection: computer
+    };
+
     if (playerSelection === computer){
-        return 0;
+        roundOutcome.outcome = 0;
     }
-    else if (playerSelection === 'rock' && computer === 'scissors')
-        return 1;
-    else if (playerSelection === 'paper' && computer === 'rock')
-        return 1;
-    else if (playerSelection === 'scissors' && computer === 'paper')
-        return 1;
-    else return -1;
+    else if (playerSelection === 'rock' && computer === 'scissors'){
+        roundOutcome.outcome = 1;}
+    else if (playerSelection === 'paper' && computer === 'rock'){
+        roundOutcome.outcome = 1;}
+    else if (playerSelection === 'scissors' && computer === 'paper'){
+        roundOutcome.outcome = 1;}
+    else {roundOutcome.outcome = -1;}
+    
+    return roundOutcome;
     }
 
-function game(rounds, playerSelection){
-    // PLays game of R/P/S and returns object with numbers of wins, loses and draws.
-    let wins = 0;
-    let loses = 0;
-    let draws = 0;
-    for (i=0; i<rounds; i++){
-        outcome = playRound(playerSelection, computerPlay());
-        if (outcome === 0){
-            draws+=1;
-        }
-        else if (outcome === 1) {
-            wins +=1;
-        }
-        else {
-            loses+=1;}
 
+
+let playerScore = 0;
+let computerScore = 0;
+let outcomesView = document.querySelector("#outcomes");
+let gameView = document.querySelector("#game-results");
+outcomesView.textContent = `${playerScore} : ${computerScore}`;
+
+function playGame(button){
+    let outcome = playRound(button.textContent);
+    if (outcome.outcome === 1){
+        playerScore +=1;
+        gameView.textContent = `You won! Your ${outcome.playerSelection} beats computer's ${outcome.computerSelection}`;
     }
-    return {'wins' : wins, 'loses' : loses, 'draws' :draws};
+    else if(outcome.outcome === -1){
+        computerScore +=1;
+        gameView.textContent = `You lost! Computer's ${outcome.computerSelection} beats Your ${outcome.playerSelection}`;
+    }
+    else{
+        gameView.textContent = 'Draw!';
+    }
+    outcomesView.textContent = `${playerScore} : ${computerScore}`;
+    
+
 }
 
-
-outcomes = [];
 let gamebuttons = document.querySelectorAll(".game");
-
 gamebuttons.forEach(button => { 
-    button.addEventListener('click', () =>{
-        outcomes.push(playRound(button.textContent));
-        console.log(outcomes);
-    });
-});
+    button.addEventListener('click', () => playGame(button));});
 
