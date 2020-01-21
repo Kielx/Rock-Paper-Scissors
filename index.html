@@ -1,31 +1,31 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        
-        <h1> Rock, Paper & Scissors Game!</h1>
-        <h2> Choose one of buttons to play!</h2>
-        <div id="game-buttons">
-            <button id="rock" class="game">Rock</button>
-            <button id="paper" class="game">Paper</button>
-            <button id="scissors"class="game">Scissors</button>
-        </div>
-        <div id="outcomes">
+  <body>
+    <h1>Rock, Paper & Scissors Game!</h1>
+    <h2>Choose one of buttons to play!</h2>
+    <div id="game-buttons">
+      <button id="rock" class="game">Rock</button>
+      <button id="paper" class="game">Paper</button>
+      <button id="scissors" class="game">Scissors</button>
+    </div>
+    <div id="results-pane-major">
+      <div id="player"></div>
+      <div id="results-pane">
+        <div id="score"></div>
+        <div id="results"></div>
+      </div>
+      <div id="computer"></div>
+    </div>
 
-        </div>
-        
-        <div id='game-results'>
-            
-        </div>
-
-        
-        <script src="script.js" async defer></script>
-    </body>
+    <script src="script.js" async defer></script>
+  </body>
 </html>

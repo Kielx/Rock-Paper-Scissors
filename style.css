@@ -1,24 +1,32 @@
 h1 {
-    background-color: beige;
-    border-width: 1px;
-    border-color: black;
-    border-style: solid;
-    text-align: center;
+  background-color: beige;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  text-align: center;
 }
 
-h2{
-    background-color: beige;
-    border-width: 1px;
-    border-color: black;
-    border-style: solid;
-    text-align: center;
+h2 {
+  background-color: beige;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  text-align: center;
 }
 
 #game-buttons {
-    display: flex;
-    background-color: aqua;
-    justify-content: center;
+  display: flex;
+  background-color: aqua;
+  justify-content: center;
 }
 .game:hover {
-    transform: scale(1.2)
+  transform: scale(1.2);
+}
+
+#results-pane-major {
+  display: flex;
+}
+
+#results-pane div {
+  margin: 10px;
 }
