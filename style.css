@@ -35,23 +35,65 @@ abbr, acronym {
 
 /*Css reset*/
 
-
-
-
-
-#game-buttons {
-  display: flex;
-  background-color: aqua;
-  justify-content: center;
-}
-.game:hover {
-  transform: scale(1.2);
+html{
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
 }
 
-#results-pane-major {
-  display: flex;
+body{
+  width: 100%;
+}
+main{
+  overflow: hidden;
+  border-style: solid;
+  width: 75%;
+  margin: 3vw auto
+}
+h1{
+  text-align: center;
+  font-weight: bold;
+  font-size: 5vh;
 }
 
-#results-pane div {
-  margin: 10px;
+h2{
+  text-align: center;
+  font-weight: bold;
+  font-style: oblique;
+  font-size: 3vh;
 }
+header{
+  margin-bottom: 2em;
+}
+
+nav{
+  display: inline-block;
+  margin-left: 2em;
+}
+
+.odin-button{
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
+  white-space: nowrap;
+  text-decoration: none;
+  outline: 0;
+  position: relative;
+  display: inline-block;
+  height: 14px;
+  padding: 2px 5px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+  vertical-align: bottom;
+  cursor: pointer;
+  user-select: none;
+  background-repeat: repeat-x;
+  background-position: -1px -1px;
+  background-size: 110% 110%;
+  border: 1px solid;
+  border-radius: .25em;
+  color: #24292e;
+  background-color: #eff3f6;
+  background-image: linear-gradient(180deg, #fafbfc, #eff3f6 90%);
+  border-color: rgba(27,31,35,.2);
+  margin-bottom: 5px;
+}
+
