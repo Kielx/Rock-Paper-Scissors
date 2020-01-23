@@ -37,21 +37,7 @@ abbr, acronym {
 
 
 
-h1 {
-  background-color: beige;
-  border-width: 1px;
-  border-color: black;
-  border-style: solid;
-  text-align: center;
-}
 
-h2 {
-  background-color: beige;
-  border-width: 1px;
-  border-color: black;
-  border-style: solid;
-  text-align: center;
-}
 
 #game-buttons {
   display: flex;
