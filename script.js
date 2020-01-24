@@ -28,6 +28,7 @@ function playRound(playerSelection) {
   return roundOutcome;
 }
 
+/*
 function playGame(button) {
   let outcome = playRound(button.textContent);
   let score = document.querySelector("#score");
@@ -47,12 +48,24 @@ function playGame(button) {
   score.textContent = `${playerScore} : ${computerScore}`;
 }
 
+
 let playerScore = 0;
 let computerScore = 0;
-let score = document.querySelector("#score");
+let score = document.querySelector(".score");
 score.textContent = `${playerScore} : ${computerScore}`;
 
+
+document.querySelector('.game').addEventListener('click', () => {
+  return document.querySelector('.game').classList.add('game-move');
+});
+*/
 let gamebuttons = document.querySelectorAll(".game");
 gamebuttons.forEach(button => {
-  button.addEventListener("click", () => playGame(button));
+  button.addEventListener("click", () => playRound(button.id.substr(7)));
+
 });
+
+
+
+button = document.querySelector("#player-scissors").id.substr(7);
+console.log(button)

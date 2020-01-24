@@ -28,10 +28,33 @@
       <a class="github-button" href="https://github.com/Kielx/Rock-Paper-Scissors" data-icon="octicon-star"
         aria-label="Star Kielx/Rock-Paper-Scissors on GitHub">Star</a>
     </nav>
+    <div id='game-panel'>
+      <div id="left-pane"  class="pane">
+        <img class="game player-game" id="player-rock" src="./images/rock.png">
+        <img class="game player-game" id="player-paper" src="./images/paper.png">
+        <img class="game player-game" id="player-scissors" src="./images/scissors.png">
+      </div>
+      <div id="center-pane" class="pane">
+
+            <img class="trophy" src="./images/trophy.png">
+            <img class="trophy" src="./images/rock.png">
+            <p>You won!</p>
+            <p class="score"></p>
+
+        
+        
+      </div>
+      <div id="right-pane" class="pane">
+        <img class="game" id="computer-rock" src="./images/rock.png">
+        <img class="game" id="computer-rock" src="./images/paper.png">
+        <img class="game" id="computer-rock" src="./images/scissors.png">
+      </div>
+    </div>
+    
   </main>
 
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <script src="script.js" async defer></script>
+  <script src="./script.js" async defer></script>
 </body>
 
 </html>
