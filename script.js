@@ -28,44 +28,35 @@ function playRound(playerSelection) {
   return roundOutcome;
 }
 
-/*
+
 function playGame(button) {
-  let outcome = playRound(button.textContent);
-  let score = document.querySelector("#score");
-  let results = document.querySelector("#results");
-  document.querySelector("#player").textContent = outcome.playerSelection;
-  document.querySelector("#computer").textContent = outcome.computerSelection;
+  let outcome = playRound(button.id.substr(7));
+  let player = document.querySelector(`#${button.id}`);
+  console.log(outcome);
+  computer = document.querySelector(`#computer-${outcome.computerSelection}`);
+  player.classList.add('game-move');
+  computer.classList.add('computer-move');
 
   if (outcome.outcome === 1) {
-    playerScore += 1;
-    results.textContent = `You won! Your ${outcome.playerSelection} beats computer's ${outcome.computerSelection}`;
+    document.querySelector('.trophy').classList.add('trophyview');
+    document.querySelector('.game-result').textContent = 'You won!';
   } else if (outcome.outcome === -1) {
-    computerScore += 1;
-    results.textContent = `\n You lost! Computer's ${outcome.computerSelection} beats Your ${outcome.playerSelection}`;
+    document.querySelector('.lose').classList.add('trophyview')  ;
+    document.querySelector('.game-result').textContent = 'You lost!';
   } else {
-    results.textContent = "\n Draw!";
+    document.querySelector('.draw').classList.add('trophyview')  ;
+    document.querySelector('.game-result').textContent = 'Draw!';
   }
-  score.textContent = `${playerScore} : ${computerScore}`;
+  document.querySelector('.game-reset').classList.add('trophyview');
+  document.querySelector('.game-result').classList.add('trophyview');
 }
 
-
-let playerScore = 0;
-let computerScore = 0;
-let score = document.querySelector(".score");
-score.textContent = `${playerScore} : ${computerScore}`;
-
-
-document.querySelector('.game').addEventListener('click', () => {
-  return document.querySelector('.game').classList.add('game-move');
-});
-*/
-let gamebuttons = document.querySelectorAll(".game");
+let gamebuttons = document.querySelectorAll(".player-game");
 gamebuttons.forEach(button => {
-  button.addEventListener("click", () => playRound(button.id.substr(7)));
-
+  button.addEventListener("click", () => playGame(button));
+  console.log(button.id);
 });
 
 
 
-button = document.querySelector("#player-scissors").id.substr(7);
-console.log(button)
+

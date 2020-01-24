@@ -176,13 +176,19 @@ nav > * {
 }
 
 .game-move {
-  transition: margin 700ms;
-  margin: 10px 5vw;
+  transition: align-self 700ms;
+  align-self: flex-end;
   box-shadow: 0px 0px 0px 5px #fc5185;
   transition: box-shadow 0.6s linear;
 }
 
-.trophy {
+.computer-move {
+  transition: align-self 700ms;
+  align-self: flex-start;                                     ;
+  box-shadow: 0px 0px 0px 5px #fc5185;
+  transition: box-shadow 0.6s linear;
+}
+.trophy, .lose, .draw {
   height: 6em;
   width: 6em;
   position: absolute;
@@ -192,8 +198,11 @@ nav > * {
   margin-top: -3em;
   opacity: 0;
 }
+.game-result, .game-reset{
+  opacity: 0;
+}
 
-.trophy:hover {
+.trophyview {
   transition: opacity 1s;
   opacity: 1;
 }
