@@ -1,3 +1,4 @@
 # Rock-Paper-Scissors
 
-A basic TheOdinProject curriculum for Rock Paper Scissors game. Being updated with DOM.
+A basic game of Rock, Paper & Scissors made as a part of The Odin Project Curriculum. 
+Ver 1.0 Updated with UI.
