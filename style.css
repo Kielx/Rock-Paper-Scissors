@@ -1,32 +1,234 @@
+/* CSS RESET */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  padding: 0;
+  margin: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+ol,
+ul {
+  list-style: none;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-weight: normal;
+  font-style: normal;
+}
+caption,
+th {
+  text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 100%;
+}
+q:before,
+q:after {
+  content: "";
+}
+abbr,
+acronym {
+  border: 0;
+}
+
+/*Css reset*/
+
+html {
+  font-family: "Open Sans", sans-serif;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+}
+main {
+  overflow: hidden;
+  border: 1px solid #7474bf;
+  width: 75%;
+  margin: 3vw auto;
+  background-color: white;
+}
 h1 {
-  background-color: beige;
-  border-width: 1px;
-  border-color: black;
-  border-style: solid;
   text-align: center;
+  font-weight: bold;
+  font-size: 5vh;
 }
 
 h2 {
-  background-color: beige;
-  border-width: 1px;
-  border-color: black;
-  border-style: solid;
   text-align: center;
+  font-weight: bold;
+  font-style: oblique;
+  font-size: 3vh;
+}
+header {
+  margin-bottom: 2em;
 }
 
-#game-buttons {
+nav {
   display: flex;
-  background-color: aqua;
   justify-content: center;
-}
-.game:hover {
-  transform: scale(1.2);
+  flex-wrap: wrap;
+  border-bottom: 1px solid gainsboro;
+  margin-bottom: 6vh;
 }
 
-#results-pane-major {
+nav > * {
+  margin: 5px;
+}
+
+.odin-button {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif;
+  white-space: nowrap;
+  text-decoration: none;
+  outline: 0;
+  position: relative;
+  display: inline-block;
+  height: 14px;
+  padding: 2px 5px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 14px;
+  vertical-align: bottom;
+  cursor: pointer;
+  user-select: none;
+  background-repeat: repeat-x;
+  background-position: -1px -1px;
+  background-size: 110% 110%;
+  border: 1px solid;
+  border-radius: 0.25em;
+  color: #24292e;
+  background-color: #eff3f6;
+  background-image: linear-gradient(180deg, #fafbfc, #eff3f6 90%);
+  border-color: rgba(27, 31, 35, 0.2);
+  margin-bottom: 5px;
+}
+
+#game-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+}
+.pane {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 6vh;
 }
 
-#results-pane div {
-  margin: 10px;
+#center-pane {
+  border-right: 1px solid gainsboro;
+  border-left: 1px solid gainsboro;
+  justify-content: flex-end;
+}
+
+#center-pane > p {
+  margin-bottom: 6vh;
+}
+
+.game {
+  border-radius: 50%;
+  width: 6em;
+  margin: 10px 1vw;
+}
+
+.game-move {
+  transition: align-self 700ms;
+  align-self: flex-end;
+  box-shadow: 0px 0px 0px 5px #fc5185;
+  transition: box-shadow 0.6s linear;
+}
+
+.computer-move {
+  transition: align-self 700ms;
+  align-self: flex-start;
+  box-shadow: 0px 0px 0px 5px #fc5185;
+  transition: box-shadow 0.6s linear;
+}
+.trophy,
+.lose,
+.draw {
+  height: 9em;
+  width: 9em;
+  position: absolute;
+  left: 50%;
+  margin-left: -4.5em;
+  top: 50%;
+  margin-top: -9em;
+  opacity: 0;
+}
+.game-result,
+.game-reset {
+  opacity: 0;
+}
+
+.game-reset {
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 15px 60px;
+  display: inline-block;
+   text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  outline: none;
+  position: relative;
+  color: #fff;
+  background: #226fbe;
+  transition: none;
+  border: 4px solid #226fbe;
+}
+
+.trophyview {
+  transition: opacity 1s;
+  opacity: 1;
+}
+
+h3{
+  font-family: inherit;
+  font-weight: bolder;
+  font-size: 1.25em;
+  margin-bottom: 6vh;
 }
