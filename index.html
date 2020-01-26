@@ -16,6 +16,7 @@
     <header>
       <h1>Rock, Paper & Scissors game</h1>
       <h2>by Kielx</h2>
+      
     </header>
     <nav>
       <a class="odin-button" href="https://www.theodinproject.com/home">The Odin Project</a>
@@ -28,30 +29,27 @@
       <a class="github-button" href="https://github.com/Kielx/Rock-Paper-Scissors" data-icon="octicon-star"
         aria-label="Star Kielx/Rock-Paper-Scissors on GitHub">Star</a>
     </nav>
-    <div id='game-panel'>
-      <div id="left-pane"  class="pane">
-        <img class="game player-game" id="player-rock" src="./images/rock.png">
-        <img class="game player-game" id="player-paper" src="./images/paper.png">
-        <img class="game player-game" id="player-scissors" src="./images/scissors.png">
+    <div id="game-panel">
+      <div id="left-pane" class="pane">
+        <h3>Player Choices</h3>
+        <img class="game player-game" id="player-rock" src="./images/rock.png" />
+        <img class="game player-game" id="player-paper" src="./images/paper.png" />
+        <img class="game player-game" id="player-scissors" src="./images/scissors.png" />
       </div>
       <div id="center-pane" class="pane">
-
-            <img class="trophy" src="./images/trophy.png">
-            <img class="lose" src="./images/lose.png">
-            <img class="draw" src="./images/draw.png">
-            <p class="game-result"></p>
-            <button class="game-reset">Play Again!</button>
-
-        
-        
+        <img class="trophy result" src="./images/trophy.png" />
+        <img class="lose result" src="./images/lose.png" />
+        <img class="draw result" src="./images/equal.png" />
+        <h3 class="game-result"></h3>
+        <button class="game-reset">Play Again!</button>
       </div>
       <div id="right-pane" class="pane">
-        <img class="game" id="computer-rock" src="./images/rock.png">
-        <img class="game" id="computer-paper" src="./images/paper.png">
-        <img class="game" id="computer-scissors" src="./images/scissors.png">
+        <h3>Computer Choices</h3>
+        <img class="game" id="computer-rock" src="./images/rock.png" />
+        <img class="game" id="computer-paper" src="./images/paper.png" />
+        <img class="game" id="computer-scissors" src="./images/scissors.png" />
       </div>
     </div>
-    
   </main>
 
   <script async defer src="https://buttons.github.io/buttons.js"></script>

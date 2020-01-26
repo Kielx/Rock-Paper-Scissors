@@ -28,35 +28,55 @@ function playRound(playerSelection) {
   return roundOutcome;
 }
 
-
 function playGame(button) {
-  let outcome = playRound(button.id.substr(7));
-  let player = document.querySelector(`#${button.id}`);
-  console.log(outcome);
-  computer = document.querySelector(`#computer-${outcome.computerSelection}`);
-  player.classList.add('game-move');
-  computer.classList.add('computer-move');
+  if (active != true) {
+    let outcome = playRound(button.id.substr(7));
+    let player = document.querySelector(`#${button.id}`);
+    computer = document.querySelector(`#computer-${outcome.computerSelection}`);
+    player.classList.add("game-move");
+    computer.classList.add("computer-move");
 
-  if (outcome.outcome === 1) {
-    document.querySelector('.trophy').classList.add('trophyview');
-    document.querySelector('.game-result').textContent = 'You won!';
-  } else if (outcome.outcome === -1) {
-    document.querySelector('.lose').classList.add('trophyview')  ;
-    document.querySelector('.game-result').textContent = 'You lost!';
+    if (outcome.outcome === 1) {
+      document.querySelector(".trophy").classList.add("trophyview");
+      document.querySelector(".game-result").textContent = "You won!";
+    } else if (outcome.outcome === -1) {
+      document.querySelector(".lose").classList.add("trophyview");
+      document.querySelector(".game-result").textContent = "You lost!";
+    } else {
+      document.querySelector(".draw").classList.add("trophyview");
+      document.querySelector(".game-result").textContent = "Draw!";
+    }
+    document.querySelector(".game-reset").classList.add("trophyview");
+    document.querySelector(".game-result").classList.add("trophyview");
+    active = true;
   } else {
-    document.querySelector('.draw').classList.add('trophyview')  ;
-    document.querySelector('.game-result').textContent = 'Draw!';
+    reset();
   }
-  document.querySelector('.game-reset').classList.add('trophyview');
-  document.querySelector('.game-result').classList.add('trophyview');
 }
 
-let gamebuttons = document.querySelectorAll(".player-game");
-gamebuttons.forEach(button => {
-  button.addEventListener("click", () => playGame(button));
-  console.log(button.id);
-});
+let reset = function() {
+  document.querySelectorAll(".game").forEach(button => {
+    button.classList.remove("game-move");
+    button.classList.remove("computer-move");
+  });
+  document.querySelectorAll(".result").forEach(result => {
+    result.classList.remove("trophyview");
+  });
+  document.querySelector(".game-result").textContent = "";
+  document.querySelector(".game-result").classList.remove("trophyview");
+  document.querySelector(".game-reset").classList.remove("trophyview");
+  active = false;
+};
 
+function begin() {
+  let gamebuttons = document.querySelectorAll(".player-game");
+  gamebuttons.forEach(button => {
+    button.addEventListener("click", () => playGame(button));
+  });
+  document.querySelector(".game-reset").addEventListener("click", () => {
+    reset();
+  });
+}
 
-
-
+let active = false;
+begin();
